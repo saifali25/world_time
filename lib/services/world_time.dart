@@ -24,10 +24,11 @@ class WorldTime {
       DateTime now = DateTime.parse(datetime);
       now = now.add(Duration(hours: int.parse(offset)));
 
+      //Setting Day and Night Image
       isDayTime = now.hour > 6 && now.hour < 20 ? true : false;
       time = DateFormat.jm().format(now);
     } catch (e) {
-      time = ('Could not get Time Data');
+      time = ('Could not get Time Data, check internet connection');
     }
   }
 }
